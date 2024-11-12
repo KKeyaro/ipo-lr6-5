@@ -6,9 +6,18 @@
 
 import random #Импорт модуля random 
 numbers = [random.randint(-50, 50) for i in range(25)] #Генерация списка
-poloz = sum(1 for n in numbers if n > 0) #Находим все положительные элементы
-otric = sum(1 for n in numbers if n < 0) #Находим все отрицательные элементы
-nyl = sum(1 for n in numbers if n == 0) #Находим все нулевые элементы
+poloz = 0
+otric = 0
+nyl = 0
+
+for i in numbers:
+    if i > 0:
+        poloz += 1
+    elif i < 0:
+        otric += 1
+    else:
+        nyl += 1
+
 poloz_proc = (poloz / 25) * 100 #Считаем процент положительных элементов
 otric_proc = (otric / 25) * 100 #Считаем процент отрицательных элементов
 nyl_proc = (nyl / 25) * 100 #Считаем процент нулевых элементов
